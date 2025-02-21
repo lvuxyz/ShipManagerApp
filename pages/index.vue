@@ -103,11 +103,13 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  width: 100%;
+  min-height: 90vh;
+  width: 90%;
+  max-width: 1200px;
   background: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 20px;
+  margin: 0 auto;
 }
 
 .login-card {
