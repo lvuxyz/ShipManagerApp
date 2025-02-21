@@ -103,25 +103,28 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
-  background: linear-gradient(135deg, #a5b4fc 0%, #6366f1 100%);
+  background: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
 }
 
 .login-card {
   position: relative;
   background-color: white;
-  border-radius: 8px;
+  border-radius: 16px;
   padding: 30px;
-  width: 400px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 .logo-container {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  gap: 12px;
 }
 
 .logo {
@@ -130,7 +133,8 @@ export default {
 
 .title {
   color: #6366f1;
-  font-size: 24px;
+  font-size: 28px;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -151,28 +155,32 @@ export default {
 
 .form-title {
   color: #333;
-  font-size: 20px;
-  margin-bottom: 20px;
+  font-size: 16px;
+  margin-bottom: 8px;
   font-weight: 500;
 }
 
 .input-group {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   position: relative;
 }
 
 .input-field {
   width: 100%;
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  max-width: 370px;
+  padding: 12px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
   font-size: 14px;
-  transition: border-color 0.3s;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+  display: block;
 }
 
 .input-field:focus {
   outline: none;
   border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
 }
 
 .toggle-password {
@@ -190,14 +198,14 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .remember-me {
   display: flex;
   align-items: center;
-  cursor: pointer;
-  color: #666;
+  gap: 8px;
+  color: #4b5563;
   font-size: 14px;
 }
 
@@ -209,6 +217,12 @@ export default {
   color: #6366f1;
   text-decoration: none;
   font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.forgot-link:hover {
+  color: #4f46e5;
 }
 
 .confirm-button {
@@ -217,20 +231,22 @@ export default {
   background-color: #6366f1;
   color: white;
   border: none;
-  border-radius: 4px;
-  font-size: 16px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.2s ease;
   margin-bottom: 20px;
 }
 
 .confirm-button:hover {
-  background-color: #5253cc;
+  background-color: #4f46e5;
+  transform: translateY(-1px);
 }
 
 .alternative-logins {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 20px;
 }
 
@@ -238,57 +254,78 @@ export default {
   flex: 1;
   padding: 10px;
   background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
   cursor: pointer;
-  color: #333;
-  transition: border-color 0.3s;
+  color: #4b5563;
+  transition: all 0.2s ease;
 }
 
 .verification-button:hover, .register-button:hover {
   border-color: #6366f1;
+  color: #6366f1;
+  background-color: rgba(99, 102, 241, 0.05);
 }
 
 .account-login {
-  margin-top: 30px;
+  margin-top: 24px;
   text-align: center;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
 }
 
 .account-title {
-  color: #666;
+  color: #6b7280;
   font-size: 14px;
-  margin-bottom: 15px;
-}
-
-.account-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+  margin: 0;
 }
 
 /* Dark mode styles */
 .dark-mode .login-card {
-  background-color: #1a1a1a;
+  background-color: #1f2937;
+  border: 1px solid #374151;
 }
 
-.dark-mode .form-title,
-.dark-mode .input-field,
-.dark-mode .remember-me,
-.dark-mode .verification-button,
-.dark-mode .register-button,
-.dark-mode .account-title {
-  color: #f0f0f0;
+.dark-mode .form-title {
+  color: #f3f4f6;
 }
 
 .dark-mode .input-field {
-  background-color: #2a2a2a;
-  border-color: #444;
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #f3f4f6;
+}
+
+.dark-mode .input-field:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+.dark-mode .remember-me {
+  color: #d1d5db;
 }
 
 .dark-mode .verification-button,
 .dark-mode .register-button {
-  background-color: #2a2a2a;
-  border-color: #444;
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #d1d5db;
+}
+
+.dark-mode .verification-button:hover,
+.dark-mode .register-button:hover {
+  background-color: #4b5563;
+  border-color: #6366f1;
+  color: #f3f4f6;
+}
+
+.dark-mode .account-title {
+  color: #d1d5db;
+}
+
+.dark-mode .account-login {
+  border-top-color: #374151;
 }
 </style>
